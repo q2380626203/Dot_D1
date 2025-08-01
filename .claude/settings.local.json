@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(chmod:*)",
+      "Bash(./Dot_D1_launch.sh:*)",
+      "Bash(pip3 install:*)",
+      "Bash(pip install:*)",
+      "Bash(sudo apt:*)",
+      "Bash(sudo apt install:*)",
+      "Bash(export:*)",
+      "Bash(pkill:*)",
+      "Bash(ls:*)",
+      "Bash(apt:*)",
+      "Bash(apt install:*)",
+      "Bash(git --version)",
+      "Bash(mount)",
+      "Bash(sudo:*)",
+      "Bash(cat:*)",
+      "Bash(systemd-detect-virt:*)",
+      "Bash(dpkg:*)",
+      "Bash(aa-status:*)",
+      "Bash(getenforce)",
+      "Bash(getcap:*)",
+      "Bash(/usr/bin/sudo:*)",
+      "Bash(strace:*)",
+      "Bash(gcc:*)",
+      "Bash(/home/ub/Dot_D1/test_setuid)",
+      "Bash(mount:*)",
+      "Bash(pkexec:*)",
+      "Bash(runuser:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(mkdir:*)",
+      "Bash(tar:*)",
+      "Bash(rm:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}
