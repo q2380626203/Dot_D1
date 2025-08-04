@@ -147,6 +147,12 @@ def main():
     _thread.start_new_thread(leg_can_write_R,())   
     _thread.start_new_thread(leg_can_read_R ,())  
     _thread.start_new_thread(read_imu_data,())    
+    
+    # 启动BLE蓝牙遥控线程
+    if cof.ble.enabled:
+        _thread.start_new_thread(synch.ble_remote_server,())
+        print("BLE蓝牙遥控线程已启动")
+    
     time.sleep(0.1)
 
     fixed.robot_attitude_init()                   

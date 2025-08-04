@@ -294,4 +294,33 @@ def read_control_data():
     pygame.quit()  
 
 
+def ble_remote_server():
+    """BLE蓝牙遥控服务器线程函数"""
+    try:
+        # 检查BLE是否启用
+        if not cof.ble.enabled:
+            print("BLE遥控功能已禁用")
+            return
+            
+        print("正在启动BLE遥控服务器...")
+        
+        # 导入BLE模块
+        import ble_remote
+        
+        # 启动BLE服务器线程
+        ble_thread = ble_remote.start_ble_server_thread()
+        
+        print("BLE遥控服务器已启动")
+        
+        # 保持线程活跃
+        while True:
+            time.sleep(1.0)
+            
+    except ImportError as e:
+        print(f"BLE模块导入失败: {e}")
+        print("请确保已安装 bleak 库: pip3 install bleak")
+    except Exception as e:
+        print(f"BLE遥控服务器启动失败: {e}")
+
+
 

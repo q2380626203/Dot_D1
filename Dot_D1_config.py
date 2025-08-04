@@ -46,6 +46,9 @@ motor_real_angle_init = np.array([[l_h_p_j_init, l_h_r_j_init, l_k_j_init, l_jz_
 commands = [0.0,0.0,0.0]     
 run_speed = 0.2             
 
+# 重心调节
+center_x = 0.0
+
 start = 0                    
 
 
@@ -159,4 +162,30 @@ class real:
     imu_angle_effective = 50 
     imu_angle_exceed = 0     
     imu_y_wc = 0.
+
+
+# BLE蓝牙遥控配置
+class ble:
+    # BLE服务器配置
+    enabled = True                    # 是否启用BLE遥控
+    device_name = "Dot_D1_Robot"     # BLE设备名称
+    
+    # 服务和特征值UUID
+    service_uuid = "12345678-1234-1234-1234-123456789abc"
+    command_char_uuid = "87654321-4321-4321-4321-cba987654321"
+    status_char_uuid = "11111111-2222-3333-4444-555555555555"
+    
+    # 连接和通信参数
+    heartbeat_timeout = 2.0          # 心跳超时时间（秒）
+    status_broadcast_interval = 0.1   # 状态广播间隔（秒）
+    max_connections = 1               # 最大连接数
+    
+    # 安全配置
+    require_pairing = False          # 是否需要配对
+    encryption_required = False      # 是否需要加密
+    
+    # 遥控参数
+    speed_limit = 0.2                # 速度限制
+    rotation_speed_limit = 0.4       # 旋转速度限制
+    center_adjust_step = 0.001       # 重心调节步长
 
